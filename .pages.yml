@@ -1,0 +1,39 @@
+# Pages CMS 后台配置：登录后用图形界面写文章、传图片
+# 配置说明见 https://pagescms.org/docs
+
+media: docs/assets
+
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: docs/blog/posts
+    format: yaml-frontmatter
+    filename: '{year}-{month}-{day}-{primary}.md'
+    view:
+      fields: [title, date, categories]
+      primary: title
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: date
+        label: 发布日期
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: categories
+        label: 分类
+        type: string
+        list: true
+        options:
+          values:
+            - 随笔
+            - 备忘
+            - 读书
+            - 照片
+      - name: body
+        label: 正文
+        type: rich-text
