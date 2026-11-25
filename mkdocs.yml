@@ -3,7 +3,6 @@ site_description: 记录、写作与分享
 site_author: Cheshire-qwq
 # ↓↓↓ 上线前把这两行改成你自己的 ↓↓↓
 site_url: https://Cheshire-qwq.github.io/mysite/
-repo_url: https://github.com/Cheshire-qwq/mysite
 
 theme:
   name: material
