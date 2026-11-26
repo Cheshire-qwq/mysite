@@ -1,0 +1,143 @@
+/* ============================================================
+   extra.css —— 站点微调（在 Material 主题样式之后加载）
+   1) 关掉右栏的「目录」
+   2) 右下角「敲一下」角色挂件的样式
+   ============================================================ */
+
+/* ---------- 1. 去掉右栏目录 ---------- */
+.md-sidebar--secondary { display: none !important; }
+
+/* ---------- 2. 敲一下挂件 ---------- */
+.mokuo {
+  position: fixed;
+  right: 1rem;
+  bottom: 1.8rem;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.mokuo__btn {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  line-height: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .12s cubic-bezier(.2, .9, .3, 1.4);
+}
+.mokuo__btn:active { transform: scale(.94); }
+.mokuo__btn.hit { animation: mokuoHit .3s ease; }
+
+@keyframes mokuoHit {
+  0%   { transform: scale(1) rotate(0); }
+  30%  { transform: scale(.86) rotate(-6deg); }
+  65%  { transform: scale(1.05) rotate(3deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+.mokuo__img {
+  width: 132px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 14px rgba(18, 58, 48, .22));
+  animation: mokuoIdle 3.6s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+/* 脚下的小影子，让角色像是"站"在页面上 */
+.mokuo__ground {
+  width: 88px;
+  height: 20px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(18, 58, 48, .28), rgba(18, 58, 48, 0));
+  pointer-events: none;
+}
+
+@keyframes mokuoIdle {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-4px) rotate(1deg); }
+}
+
+/* 深色模式：角色是彩色的，不做反色，只把投影压深一点 */
+[data-md-color-scheme="slate"] .mokuo__img {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .55)) drop-shadow(0 0 6px rgba(255, 255, 255, .10));
+}
+[data-md-color-scheme="slate"] .mokuo__ground {
+  background: radial-gradient(closest-side, rgba(0, 0, 0, .55), rgba(0, 0, 0, 0));
+}
+
+.mokuo__ring {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border-radius: 50%;
+  border: 2px solid #c8901f;
+  opacity: 0;
+  pointer-events: none;
+}
+.mokuo__ring.show { animation: mokuoRing .5s ease-out forwards; }
+
+@keyframes mokuoRing {
+  0%   { opacity: .9; transform: scale(.5); }
+  100% { opacity: 0;  transform: scale(2.6); }
+}
+
+.mokuo__label {
+  font-size: .62rem;
+  letter-spacing: .5px;
+  color: var(--md-default-fg-color);
+  opacity: .9;
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(31, 92, 77, .18);
+  border-radius: 999px;
+  padding: .12rem .5rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(18, 58, 48, .12);
+}
+[data-md-color-scheme="slate"] .mokuo__label {
+  border-color: rgba(160, 220, 200, .16);
+}
+
+.mokuo__pop {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .84rem;
+  font-weight: 800;
+  color: #c8901f;
+  pointer-events: none;
+  opacity: 0;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, .5);
+}
+.mokuo__pop.show { animation: mokuoPop .8s ease forwards; }
+
+@keyframes mokuoPop {
+  0%   { opacity: 0; transform: translate(-50%, 8px) scale(.9); }
+  25%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -40px) scale(1.06); }
+}
+
+[data-md-color-scheme="slate"] .mokuo__pop {
+  color: #e0b76a;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+}
+
+@media (max-width: 44.9375em) {
+  .mokuo { right: .5rem; bottom: 1rem; }
+  .mokuo__img { width: 100px; }
+}
+

@@ -1,4 +1,4 @@
-site_name: 我的个人网站
+site_name: 柴郡の笺月屿
 site_description: 记录、写作与分享
 site_author: Cheshire-qwq
 # ↓↓↓ 上线前把这两行改成你自己的 ↓↓↓
@@ -70,3 +70,9 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 copyright: 保留所有权利
+
+extra_css:
+  - assets/extra.css
+
+extra_javascript:
+  - assets/site.js
