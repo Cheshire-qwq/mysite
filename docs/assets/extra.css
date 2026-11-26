@@ -110,31 +110,52 @@
   border-color: rgba(160, 220, 200, .16);
 }
 
+/* 点击后浮起的小气泡：上面一行“点点关注谢谢喵”，下面一个大“喵” */
 .mokuo__pop {
   position: absolute;
-  top: 2px;
+  bottom: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%);
-  font-size: .84rem;
-  font-weight: 800;
-  color: #c8901f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .12rem;
+  padding: .38rem .72rem .34rem;
+  border-radius: 14px;
+  line-height: 1.35;
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(31, 92, 77, .18);
+  box-shadow: 0 6px 16px rgba(18, 58, 48, .16);
   pointer-events: none;
   opacity: 0;
   white-space: nowrap;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, .5);
 }
-.mokuo__pop.show { animation: mokuoPop .8s ease forwards; }
+.mokuo__pop em {
+  font-style: normal;
+  font-size: .62rem;
+  letter-spacing: .3px;
+  color: var(--md-default-fg-color);
+  opacity: .8;
+}
+.mokuo__pop strong {
+  font-size: .92rem;
+  font-weight: 800;
+  color: #c8901f;
+  line-height: 1.1;
+}
+.mokuo__pop.show { animation: mokuoPop .9s ease forwards; }
 
 @keyframes mokuoPop {
-  0%   { opacity: 0; transform: translate(-50%, 8px) scale(.9); }
-  25%  { opacity: 1; }
-  100% { opacity: 0; transform: translate(-50%, -40px) scale(1.06); }
+  0%   { opacity: 0; transform: translate(-50%, 10px) scale(.9); }
+  22%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -26px) scale(1.02); }
 }
 
 [data-md-color-scheme="slate"] .mokuo__pop {
-  color: #e0b76a;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+  border-color: rgba(160, 220, 200, .16);
+  background: #16241f;
 }
+[data-md-color-scheme="slate"] .mokuo__pop strong { color: #e0b76a; }
 
 @media (max-width: 44.9375em) {
   .mokuo { right: .5rem; bottom: 1rem; }

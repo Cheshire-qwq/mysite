@@ -45,7 +45,12 @@
 
     var pop = document.createElement('div');
     pop.className = 'mokuo__pop';
-    pop.textContent = '功德+1';
+    var popTip = document.createElement('em');
+    popTip.textContent = '点点关注谢谢喵';
+    var popWord = document.createElement('strong');
+    popWord.textContent = '喵';
+    pop.appendChild(popTip);
+    pop.appendChild(popWord);
 
     var label = document.createElement('div');
     label.className = 'mokuo__label';
@@ -55,7 +60,7 @@
       count = parseInt(localStorage.getItem('mokuo_count') || '0', 10);
       if (!isFinite(count) || count < 0) count = 0;
     } catch (e) { count = 0; }
-    label.textContent = '功德 ' + count;
+    label.textContent = '喵 ' + count;
 
     var ground = document.createElement('div');
     ground.className = 'mokuo__ground';
@@ -101,7 +106,7 @@
 
     function hit() {
       count++;
-      label.textContent = '功德 ' + count;
+      label.textContent = '喵 ' + count;
       try { localStorage.setItem('mokuo_count', String(count)); } catch (e) {}
       btn.classList.remove('hit');
       void btn.offsetWidth;
