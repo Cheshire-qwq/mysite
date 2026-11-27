@@ -2,12 +2,10 @@
    site.js —— 右下角「敲一下」角色挂件
    样式在 assets/extra.css，这里只负责行为
    换角色图：替换 assets/cheshire.png 即可（保持透明底 PNG）
-   想静音：把下面 SOUND 改成 false
+   无音效：点击只有动画与震动反馈
    ============================================================ */
 (function () {
   "use strict";
-
-  var SOUND = true;
 
   /* 找到 site.js 自己的地址，拼出 assets/cheshire.png 的绝对路径，
      这样文章在 /blog/2026/xx/ 这种多级目录里图片也不会丢 */
@@ -73,37 +71,6 @@
     wrap.appendChild(label);
     document.body.appendChild(wrap);
 
-    var audioCtx = null;
-    function tok() {
-      if (!SOUND) return;
-      try {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        var t = audioCtx.currentTime;
-        // 空腔木头音：低频三角波 + 快速衰减
-        var osc = audioCtx.createOscillator();
-        var g1 = audioCtx.createGain();
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(320, t);
-        osc.frequency.exponentialRampToValueAtTime(120, t + 0.09);
-        g1.gain.setValueAtTime(0.18, t);
-        g1.gain.exponentialRampToValueAtTime(0.001, t + 0.12);
-        osc.connect(g1).connect(audioCtx.destination);
-        osc.start(t);
-        osc.stop(t + 0.14);
-        // 一瞬间的敲击噪声
-        var buf = audioCtx.createBuffer(1, 96, audioCtx.sampleRate);
-        var ch = buf.getChannelData(0);
-        for (var i = 0; i < ch.length; i++) ch[i] = (Math.random() * 2 - 1) * (1 - i / ch.length);
-        var src = audioCtx.createBufferSource();
-        var g2 = audioCtx.createGain();
-        src.buffer = buf;
-        g2.gain.setValueAtTime(0.12, t);
-        g2.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
-        src.connect(g2).connect(audioCtx.destination);
-        src.start(t);
-      } catch (e) { /* 静音也能敲 */ }
-    }
-
     function hit() {
       count++;
       label.textContent = '喵 ' + count;
@@ -117,7 +84,6 @@
       pop.classList.remove('show');
       void pop.offsetWidth;
       pop.classList.add('show');
-      tok();
       if (navigator.vibrate) { try { navigator.vibrate(18); } catch (e) {} }
     }
 

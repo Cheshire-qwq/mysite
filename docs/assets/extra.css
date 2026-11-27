@@ -1,8 +1,90 @@
 /* ============================================================
    extra.css —— 站点微调（在 Material 主题样式之后加载）
+   0) 全局配色：浅灰蓝 #8799B0
    1) 关掉右栏的「目录」
    2) 右下角「敲一下」角色挂件的样式
+   ------------------------------------------------------------
+   想换颜色只改「0. 配色」这一段即可（两套方案：白底 / 暗色）
    ============================================================ */
+
+/* ---------- 0. 配色 ---------- */
+/* 浅色（白底）：背景 #F7F8FA ／ 正文 #383E49 ／ 标题·强调 #6A7FA0 ／ 主色 #8799B0 */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #F7F8FA;
+  --md-default-bg-color--light: #FFFFFF;
+  --md-default-fg-color: #383E49;
+  --md-default-fg-color--light: #5B6472;
+  --md-default-fg-color--lighter: rgba(56, 62, 73, .55);
+  --md-default-fg-color--lightest: rgba(56, 62, 73, .10);
+  --md-typeset-a-color: #6A7FA0;
+  --md-accent-fg-color: #6A7FA0;
+  --md-footer-bg-color: #7B8CA3;
+  --md-footer-bg-color--dark: #6A7FA0;
+  --site-head: linear-gradient(120deg, #7B8CA3 0%, #8799B0 55%, #9FAFC3 100%);
+  --site-title: #6A7FA0;
+  --site-card-border: rgba(135, 153, 176, .30);
+  --site-shadow: rgba(104, 120, 146, .12);
+}
+
+/* 深色（暗模式）：背景 #1A1D24 ／ 正文 #D1D8E3 ／ 标题·强调 #8799B0 */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1A1D24;
+  --md-default-bg-color--light: #20242D;
+  --md-default-fg-color: #D1D8E3;
+  --md-default-fg-color--light: rgba(209, 216, 227, .75);
+  --md-default-fg-color--lighter: rgba(209, 216, 227, .45);
+  --md-default-fg-color--lightest: rgba(209, 216, 227, .12);
+  --md-typeset-a-color: #8799B0;
+  --md-accent-fg-color: #8799B0;
+  --md-footer-bg-color: #232833;
+  --md-footer-bg-color--dark: #1A1D24;
+  --site-head: linear-gradient(120deg, #232833 0%, #2C3240 55%, #3A4152 100%);
+  --site-title: #8799B0;
+  --site-card-border: rgba(135, 153, 176, .26);
+  --site-shadow: rgba(0, 0, 0, .45);
+}
+
+body { background: var(--md-default-bg-color) !important; }
+
+/* 顶部导航栏 / 栏目条 */
+.md-header {
+  background: var(--site-head) !important;
+  box-shadow: 0 2px 16px rgba(104, 120, 146, .18);
+}
+.md-tabs {
+  background: var(--site-head) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* 标题用强调色，正文保持低对比深灰，久看不累 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: var(--site-title);
+}
+.md-typeset h2 {
+  padding-left: .7rem;
+  border-left: 4px solid var(--site-title);
+  border-radius: 2px;
+}
+
+/* 正文行距与字号 */
+.md-typeset { line-height: 1.85; }
+.md-typeset p { margin-bottom: .9em; }
+
+/* 首页卡片：圆角 + 悬浮阴影 */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li {
+  border: 1px solid var(--site-card-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 26px var(--site-shadow);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px var(--site-shadow);
+}
 
 /* ---------- 1. 去掉右栏目录 ---------- */
 .md-sidebar--secondary { display: none !important; }
@@ -47,7 +129,7 @@
   width: 132px;
   height: auto;
   display: block;
-  filter: drop-shadow(0 8px 14px rgba(18, 58, 48, .22));
+  filter: drop-shadow(0 8px 14px rgba(56, 62, 73, .22));
   animation: mokuoIdle 3.6s ease-in-out infinite;
   transform-origin: 50% 100%;
 }
@@ -58,7 +140,7 @@
   height: 20px;
   margin-top: -10px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(18, 58, 48, .28), rgba(18, 58, 48, 0));
+  background: radial-gradient(closest-side, rgba(56, 62, 73, .28), rgba(56, 62, 73, 0));
   pointer-events: none;
 }
 
@@ -83,7 +165,7 @@
   height: 26px;
   margin: -13px 0 0 -13px;
   border-radius: 50%;
-  border: 2px solid #c8901f;
+  border: 2px solid #6A7FA0;
   opacity: 0;
   pointer-events: none;
 }
@@ -100,14 +182,11 @@
   color: var(--md-default-fg-color);
   opacity: .9;
   background: var(--md-default-bg-color);
-  border: 1px solid rgba(31, 92, 77, .18);
+  border: 1px solid var(--site-card-border);
   border-radius: 999px;
   padding: .12rem .5rem;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(18, 58, 48, .12);
-}
-[data-md-color-scheme="slate"] .mokuo__label {
-  border-color: rgba(160, 220, 200, .16);
+  box-shadow: 0 4px 12px rgba(56, 62, 73, .12);
 }
 
 /* 点击后浮起的小气泡：上面一行“点点关注谢谢喵”，下面一个大“喵” */
@@ -124,8 +203,8 @@
   border-radius: 14px;
   line-height: 1.35;
   background: var(--md-default-bg-color);
-  border: 1px solid rgba(31, 92, 77, .18);
-  box-shadow: 0 6px 16px rgba(18, 58, 48, .16);
+  border: 1px solid var(--site-card-border);
+  box-shadow: 0 6px 16px rgba(56, 62, 73, .16);
   pointer-events: none;
   opacity: 0;
   white-space: nowrap;
@@ -140,7 +219,7 @@
 .mokuo__pop strong {
   font-size: .92rem;
   font-weight: 800;
-  color: #c8901f;
+  color: #6A7FA0;
   line-height: 1.1;
 }
 .mokuo__pop.show { animation: mokuoPop .9s ease forwards; }
@@ -152,13 +231,11 @@
 }
 
 [data-md-color-scheme="slate"] .mokuo__pop {
-  border-color: rgba(160, 220, 200, .16);
-  background: #16241f;
+  background: #20242D;
 }
-[data-md-color-scheme="slate"] .mokuo__pop strong { color: #e0b76a; }
+[data-md-color-scheme="slate"] .mokuo__pop strong { color: #8799B0; }
 
 @media (max-width: 44.9375em) {
   .mokuo { right: .5rem; bottom: 1rem; }
   .mokuo__img { width: 100px; }
 }
-

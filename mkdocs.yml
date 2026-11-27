@@ -12,15 +12,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: amber
+      primary: '#8799B0'
+      accent: '#6A7FA0'
       toggle:
         icon: material/weather-night
         name: 切换到夜间模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: amber
+      primary: '#8799B0'
+      accent: '#6A7FA0'
       toggle:
         icon: material/weather-sunny
         name: 切换到日间模式
