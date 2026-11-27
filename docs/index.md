@@ -1,6 +1,6 @@
-# 欢迎来到我的小站
+# 泥嚎朋友
 
-这里是我自己的角落，用来记录想法、整理笔记、存放照片。
+该网站仅用来记录，存放，展示个人完整创作作品。<br>现在仍在更新造谣烟语烟，如果没更新就是在口嗨摸鱼，暂时没有弃坑跑路的想法<br>————誓死效忠家产（）
 
 <div class="grid cards" markdown>
 
@@ -8,17 +8,23 @@
 
     ---
 
-    随手写的随笔、读书笔记、技术备忘，都放在这里。
+    无删减完整版均会同步更新到该文集
 
-    [:octicons-arrow-right-24: 去翻一翻](blog/index.md)
-
--   :material-account-circle-outline:{ .lg .middle } **关于我**
+    [:octicons-arrow-right-24: 品鉴一下美食](blog/index.md)
+-   :material-account-circle-outline:{ .lg .middle } **开坑**
 
     ---
 
-    我是谁、在做什么、怎么联系我。
+    放一下脑洞，没有意外的情况下会根据口嗨写文
 
-    [:octicons-arrow-right-24: 认识一下](about.md)
+    [:octicons-arrow-right-24: 去看一眼](blog/thinking.md)
+
+-   :material-account-circle-outline:{ .lg .middle } **关于本人**
+
+    ---
+
+    放一些平时摸鱼画的oc以留痕
+    [:octicons-arrow-right-24: 偷看一下](about.md)
 
 </div>
 
