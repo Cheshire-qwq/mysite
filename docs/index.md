@@ -4,7 +4,7 @@
 
 <div class="grid cards" markdown>
 
--   :material-notebook-outline:{ .lg .middle } **文章**
+-   :material-book:{ .lg .middle } **文章集**
 
     ---
 
@@ -12,7 +12,15 @@
 
     [:octicons-arrow-right-24: 去翻一翻](blog/index.md)
 
--   :material-account-circle-outline:{ .lg .middle } **关于我**
+-   :material-feather:{ .lg .middle } **短打素材库**
+
+    ---
+
+    日常记录的短打片段、灵感素材与碎碎念。
+
+    [:octicons-arrow-right-24: 去看一眼](shorts.md)
+
+-   :material-cat:{ .lg .middle } **其他**
 
     ---
 
