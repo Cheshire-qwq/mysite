@@ -12,6 +12,7 @@
 
     [:octicons-arrow-right-24: 品鉴一下美食](blog/index.md)
     
+
 -   :material-feather-circle-outline:{ .lg .middle } **开坑**
 
     ---
@@ -19,6 +20,7 @@
     放一下脑洞和灵感，没有意外的情况下会根据口嗨写文
 
     [:octicons-arrow-right-24: 去看一眼](blog/thinking.md)
+    
 
 -   :material-cat-circle-outline:{ .lg .middle } **关于本人**
 
