@@ -11,25 +11,23 @@
     无删减完整版均会同步更新到该文集
 
     [:octicons-arrow-right-24: 品鉴一下美食](blog/index.md)
--   :material-account-circle-outline:{ .lg .middle } **开坑**
+    
+-   :material-feather-circle-outline:{ .lg .middle } **开坑**
 
     ---
 
-    放一下脑洞，没有意外的情况下会根据口嗨写文
+    放一下脑洞和灵感，没有意外的情况下会根据口嗨写文
 
     [:octicons-arrow-right-24: 去看一眼](blog/thinking.md)
 
--   :material-account-circle-outline:{ .lg .middle } **关于本人**
+-   :material-cat-circle-outline:{ .lg .middle } **关于本人**
 
     ---
 
     放一些平时摸鱼画的oc以留痕
-    [:octicons-arrow-right-24: 偷看一下](about.md)
+    [:octicons-arrow-right-24: 其他](about.md)
 
 </div>
 
-## 最近在更新什么
-
-这一页之后可以换成"最新文章自动列表"，也可以保持成现在这样一句话介绍。
-
-> 小提示：想改这一页的文字，直接在 GitHub 网页上打开 `docs/index.md` 点铅笔图标编辑，保存后 1 分钟网站上就变了。
+## 碎碎念
+写不完，根本写不完，能自己写画的笔哪里有得下单，急急急
