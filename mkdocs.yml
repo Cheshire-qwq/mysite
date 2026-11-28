@@ -36,7 +36,7 @@ theme:
 nav:
   - 首页: index.md
   - 文章集: blog/index.md
-  - 短打素材库: shorts.md
+  - 短打素材库: blog/thingking.md
   - 其他: about.md
 
 plugins:

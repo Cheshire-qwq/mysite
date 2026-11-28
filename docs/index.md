@@ -1,6 +1,6 @@
-# 欢迎来到我的小站
+# 泥嚎朋友
 
-这里是我自己的角落，用来记录想法、整理笔记、存放照片。
+该网站仅用来记录，存放，展示个人完整创作作品。<br>现在仍在更新造谣烟语烟，如果没更新就是在口嗨摸鱼，暂时没有弃坑跑路的想法<br>————誓死效忠家产（）
 
 <div class="grid cards" markdown>
 
@@ -8,30 +8,27 @@
 
     ---
 
-    随手写的随笔、读书笔记、技术备忘，都放在这里。
+    无删减完整版均会同步更新到该文集
 
-    [:octicons-arrow-right-24: 去翻一翻](blog/index.md)
+    [:octicons-arrow-right-24: 品鉴一下美食](blog/index.md)
 
 -   :material-feather:{ .lg .middle } **短打素材库**
 
     ---
 
-    日常记录的短打片段、灵感素材与碎碎念。
+    放一下脑洞和灵感，没有意外的情况下会根据口嗨写文
 
-    [:octicons-arrow-right-24: 去看一眼](shorts.md)
+    [:octicons-arrow-right-24: 去看一眼](blog/thingking.md)
 
 -   :material-cat:{ .lg .middle } **其他**
 
     ---
 
-    我是谁、在做什么、怎么联系我。
+    放一些平时摸鱼画的oc以留痕
 
-    [:octicons-arrow-right-24: 认识一下](about.md)
+    [:octicons-arrow-right-24: 其他](about.md)
 
 </div>
 
-## 最近在更新什么
-
-这一页之后可以换成"最新文章自动列表"，也可以保持成现在这样一句话介绍。
-
-> 小提示：想改这一页的文字，直接在 GitHub 网页上打开 `docs/index.md` 点铅笔图标编辑，保存后 1 分钟网站上就变了。
+## 碎碎念
+写不完，根本写不完，能自己写画的笔哪里有得下单，急急急
